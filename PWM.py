@@ -17,7 +17,7 @@ GPIO.setup(LED_PIN, GPIO.OUT)
 led_pwm = GPIO.PWM(LED_PIN, 100)  # 100 Hz PWM frequency
 led_pwm.start(0)  # Start with 0% brightness
 
-# Define brightness levels for 10 stages (5cm, 10cm, ..., 50cm)
+# Define brightness levels for 10 stages (2cm, 4cm, ..., 20cm)
 brightness_levels = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]
 
 # Continuously perform distance measurements
@@ -48,7 +48,7 @@ while True:
     # Calculate the distance in centimeters using the speed of sound (17150 cm/s)
     distance = pulse_duration * 17150
 
-    # Round the distance to the nearest multiple of 5
+    # Round the distance to the nearest multiple of 2
     distance = 2 * round(distance / 2)
 
     # Display the measured distance
